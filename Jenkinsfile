@@ -21,6 +21,12 @@ stages {
        }
       }
      }
+  stage('Perform Soanrqube analysis')
+                        {
+
+                                // Running sonarqube analysis
+                                sh "mvn sonar:sonar -Dsonar.host.url=http://api.aigdevopscoe.net:30002"
+                        }
  stage('Docker Build and push'){
   steps{
    script{
